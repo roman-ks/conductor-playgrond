@@ -1,0 +1,32 @@
+{
+  "createTime": 1692296513977,
+  "accessPolicy": {},
+  "name": "test_nickname",
+  "description": "Create a nickname based on input name",
+  "version": 1,
+  "tasks": [
+    {
+      "name": "get_nickname",
+      "taskReferenceName": "get_nickname",
+      "inputParameters": {
+        "name": "${workflow.input.name}"
+      },
+      "type": "SIMPLE",
+      "startDelay": 0,
+      "optional": false,
+      "asyncComplete": false
+    }
+  ],
+  "inputParameters": [
+    "name"
+  ],
+  "outputParameters": {},
+  "schemaVersion": 2,
+  "restartable": true,
+  "workflowStatusListenerEnabled": false,
+  "ownerEmail": "example@email.com",
+  "timeoutPolicy": "ALERT_ONLY",
+  "timeoutSeconds": 0,
+  "variables": {},
+  "inputTemplate": {}
+}
