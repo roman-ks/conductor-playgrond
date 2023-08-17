@@ -2,7 +2,7 @@
 
 ## Setup
 PUT /api/metadata/workflow  
-Request Body: [nickname_workflow](src\main\resources\nickname_workflow.json)
+Request Body: [nickname_workflow](src/main/resources/nickname_workflow.json)
 
 ## Submit input
 POST /api/workflow/  
