@@ -1,7 +1,7 @@
 # Nickname generation workflow
 
 ## Setup
-PUT /api/metadata/workflow  
+POST /api/metadata/workflow  
 Request Body: [nickname_workflow](src/main/resources/nickname_workflow.json)
 
 ## Submit input
