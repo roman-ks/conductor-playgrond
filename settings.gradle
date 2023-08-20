@@ -1,4 +1,4 @@
 rootProject.name = 'conductor-playground'
 
 include 'simple-workflow-worker'
-
+include 'simple-fork-join-workers'
