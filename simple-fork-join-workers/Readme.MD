@@ -36,7 +36,7 @@ curl -X 'POST' \
 ```
 
 ## Define a workflow
-```curl
+```bash
 curl -X 'POST' \
   'http://localhost:8080/api/metadata/workflow' \
   -H 'accept: */*' \
