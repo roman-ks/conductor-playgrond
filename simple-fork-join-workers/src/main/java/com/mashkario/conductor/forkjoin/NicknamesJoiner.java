@@ -20,6 +20,7 @@ public class NicknamesJoiner implements Worker {
 
     @Override
     public TaskResult execute(Task task) {
+        //todo why the map is wrapped in "names" ??
         Map<Integer, String> nicknamesMap = ((Map<String, Object>)task.getInputData().get("names"))
                 .entrySet()
                 .stream()
