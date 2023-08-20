@@ -1,3 +1,5 @@
+apply plugin: 'java'
+
 dependencies {
     implementation group: 'com.netflix.conductor', name: 'conductor-client', version: '3.13.2'
     implementation group: 'com.netflix.conductor', name: 'conductor-common', version: '3.13.2'

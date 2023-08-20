@@ -6,13 +6,13 @@
 POST /api/metadata/workflow  
 Request Body: [nickname_workflow](src/main/resources/nickname_workflow.json)
 
-## Build worker
-```shell
+## Build and Run Nickname worker
+Build:
+```bash
 ./gradlew simple-workflow-worker:jar 
 ```
-
-## Run worker
-```shell
+Run:
+```bash
 java -jar simple-workflow-worker.jar
 ```
 
