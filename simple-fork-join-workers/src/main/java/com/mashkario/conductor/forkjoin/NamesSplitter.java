@@ -12,7 +12,7 @@ import java.util.Map;
 @Slf4j
 public class NamesSplitter implements Worker {
 
-    private static final String NICKNAME_TASK = "get_nickname";
+    public static final String NICKNAME_TASK = "get_nickname";
     @Override
     public String getTaskDefName() {
         return "split_names";
@@ -30,7 +30,7 @@ public class NamesSplitter implements Worker {
         Map<String, Map<String, Object>> dynamicTasksInput = new HashMap<>();
         for (int i = 0; i < individualNames.length; i++) {
             String name = individualNames[i];
-            String reference = NICKNAME_TASK + "_" + i;
+            String reference = ReferenceNameUtils.createReferenceName(NICKNAME_TASK, i);
             dynamicTasks.add(createDynamicTaskJson(NICKNAME_TASK, reference));
 
             dynamicTasksInput.put(reference, Map.of("name", name));

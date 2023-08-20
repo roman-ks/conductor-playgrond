@@ -43,11 +43,11 @@ curl -X 'POST' \
   -H 'Content-Type: application/json' \
   -d '{
   "createTime": 1692525531525,
-  "updateTime": 1692537304858,
+  "updateTime": 1692546933034,
   "accessPolicy": {},
   "name": "test_nickname_batch",
   "description": "Batch create the nicknames from the input names",
-  "version": 7,
+  "version": 12,
   "tasks": [
     {
       "name": "split_names",
@@ -82,6 +82,17 @@ curl -X 'POST' \
       "startDelay": 0,
       "optional": false,
       "asyncComplete": false
+    },
+    {
+      "name": "join_nicknames",
+      "taskReferenceName": "join_nicknames",
+      "inputParameters": {
+        "names": "${join1.output}"
+      },
+      "type": "SIMPLE",
+      "startDelay": 0,
+      "optional": false,
+      "asyncComplete": false
     }
   ],
   "inputParameters": [
@@ -110,4 +121,22 @@ Build:
 Run:
 ```bash
 java -jar simple-fork-join-workers.jar
+```
+
+## Submit input
+```bash
+curl -X 'POST' \
+  'http://localhost:8080/api/workflow/test_nickname_batch?priority=0' \
+  -H 'accept: text/plain' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "names": "pes,patron,dsns"
+}'
+```
+
+## Get result
+```bash
+curl -X 'GET' \
+  'http://localhost:8080/api/workflow/c0e8468c-e71c-4eaa-ad89-3bff17cc720c?includeTasks=true' \
+  -H 'accept: */*'
 ```
