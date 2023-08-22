@@ -1,0 +1,35 @@
+{
+  "createTime": 1692729517666,
+  "updateTime": 1692729555723,
+  "accessPolicy": {},
+  "name": "test_nickname_sleep",
+  "description": "Create a nickname based on input name and sleep",
+  "version": 2,
+  "tasks": [
+    {
+      "name": "get_nickname_sleep",
+      "taskReferenceName": "get_nickname_sleep",
+      "inputParameters": {
+        "name": "${workflow.input.name}",
+        "sleepTime": "${workflow.input.sleepTime}"
+      },
+      "type": "SIMPLE",
+      "startDelay": 0,
+      "optional": false,
+      "asyncComplete": false
+    }
+  ],
+  "inputParameters": [
+    "name",
+    "sleepTime"
+  ],
+  "outputParameters": {},
+  "schemaVersion": 2,
+  "restartable": true,
+  "workflowStatusListenerEnabled": false,
+  "ownerEmail": "example@email.com",
+  "timeoutPolicy": "ALERT_ONLY",
+  "timeoutSeconds": 0,
+  "variables": {},
+  "inputTemplate": {}
+}
