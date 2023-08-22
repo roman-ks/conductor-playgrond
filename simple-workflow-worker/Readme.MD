@@ -59,7 +59,7 @@ Build:
 ```bash
 ./gradlew simple-workflow-worker:jar 
 ```
-To specify the sleeping Main class explicitly, since the main class of the executable jar is used for non-sleeping Main.
+To run the sleeping Main class it needs to be specified explicitly, since the main class of the executable jar is used for non-sleeping Main.
 Run:
 ```bash
 java -cp simple-workflow-worker.jar -Dworkers.count=2 com.mashkario.conductor.sleeping.Main
