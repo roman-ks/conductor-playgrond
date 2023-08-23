@@ -1,16 +1,43 @@
-# Run customized Conductor server
+# Configure and run Conductor server
 
+Currently, Conductor server exists in two repos:
+1. https://github.com/Netflix/conductor/tree/main/server
+2. https://github.com/Netflix/conductor-community/tree/main/community-server
+
+Community-server includes more features at the moment besides modules from the ordinary server.
+Furthermore Community-server doesn't include io.orkes dependencies which are included ordinary server and have custom license.
+
+## Install server
+### Precompiled
+Easiest way to get Conductor server is to download compiled jar from Maven repo:
+```bash
+export CONDUCTOR_VER=3.13.8
+export REPO_URL=https://repo1.maven.org/maven2/com/netflix/conductor/conductor-community-server
+
+# output name without community mention to  simplify switching between community/regular servers
+curl $REPO_URL/$CONDUCTOR_VER/conductor-community-server-$CONDUCTOR_VER-boot.jar \
+--output conductor-server-$CONDUCTOR_VER-boot.jar
+```
+
+### Customly complied
+Server can be build from source. 
+Useful to decrease jar size, since precompiled jar includes many modules which might not be needed.
 1. Install
-```shell
+```bash
 ./install-without-orkes.sh
 ```
-2. Find or create a properties file with the configs. [Example](application.properties)
-3. Run the server with configs
-```shell
+
+## Configure server
+Find or create a properties file with the configs. [Example](application.properties)
+See below for more configs.
+
+## Run server
+```bash
 java -jar conductor-server-*-boot.jar 
 ```
 
-## Adding SQS Event handler
+## Configuration
+### Adding SQS Event handler
 Below properties are required in config to enable SQS Event handler.
 ```properties
 conductor.event-queues.sqs.enabled=true
