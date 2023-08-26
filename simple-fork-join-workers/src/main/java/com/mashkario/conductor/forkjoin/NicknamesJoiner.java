@@ -24,7 +24,7 @@ public class NicknamesJoiner implements Worker {
         Map<Integer, String> nicknamesMap = ((Map<String, Object>)task.getInputData().get("names"))
                 .entrySet()
                 .stream()
-                .filter(e -> e.getKey().contains(NamesSplitter.NICKNAME_TASK))
+                .filter(e -> ReferenceNameUtils.isReferenceNameForTask(e.getKey(), NamesSplitter.NICKNAME_TASK))
                 .collect(Collectors.toMap(
                         e -> ReferenceNameUtils.getReferenceOrder(e.getKey()),
                         e -> ((Map<String,String>) e.getValue()).get("nickname")

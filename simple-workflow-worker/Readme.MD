@@ -62,7 +62,7 @@ Build:
 To run the sleeping Main class it needs to be specified explicitly, since the main class of the executable jar is used for non-sleeping Main.
 Run:
 ```bash
-java -cp simple-workflow-worker.jar -Dworkers.count=2 com.mashkario.conductor.sleeping.Main
+java -cp simple-workflow-worker.jar com.mashkario.conductor.sleeping.Main
 ```
 
 ## Submit input
