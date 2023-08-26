@@ -1,0 +1,7 @@
+dependencies {
+    implementation group: 'com.netflix.conductor', name: 'conductor-client', version: '3.13.2'
+
+    implementation "com.sun.jersey:jersey-client:1.19.4"
+    implementation "javax.ws.rs:javax.ws.rs-api:2.1.1"
+    implementation "org.glassfish.jersey.core:jersey-common:2.22.2"
+}
